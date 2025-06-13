@@ -22,8 +22,8 @@ public class ProdutoApp {
 
             switch (opcao) {
                 case 1:
-                    String nome = JOptionPane.showInputDialog("Digite o novo nome: ");
-                    int qtde = Integer.parseInt(JOptionPane.showInputDialog("Digite a nova qtde: "));
+                    String nome = JOptionPane.showInputDialog("Digite o nome do produto: ");
+                    int qtde = Integer.parseInt(JOptionPane.showInputDialog("Digite a qtde: "));
                     double preco = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço: "));
                     Produto produto = new Produto(nome,preco,qtde);
                     catalogo.addProduto(produto);
@@ -44,7 +44,7 @@ public class ProdutoApp {
                    String nvnome = JOptionPane.showInputDialog("digite o nome do novo produto"); 
                    preco = Double.parseDouble(JOptionPane.showInputDialog("digite o preco do novo produto")); 
                    qtde = Integer.parseInt(JOptionPane.showInputDialog("digite o preco do novo produto"));
-                	if(catalogo.alterarProduto(nome, nvnome, qtde, preco)) {
+                	if(catalogo.alterarProd(nome, nvnome, qtde, preco)) {
                 		JOptionPane.showMessageDialog(null, "Produto alterado com sucesso");
                 	}else {
                 		JOptionPane.showMessageDialog(null, "Produto não encontrado");
@@ -54,8 +54,8 @@ public class ProdutoApp {
                 case 4:
                   String lista = "";
                   
-                  for(Produto prod : catalogo.listarProdutos()) {
-                	  lista = lista	+ prod.getNome() + " R$" + prod.getPreco() + " quantidade:" + prod.getQtt() + "\n";
+                  for(Produto prod : catalogo.ListarProdutos()) {
+                	  lista = lista	+ prod.getNome() + " R$" + prod.getPreco() + " quantidade:" + prod.getQtde() + "\n";
                   }
                   JOptionPane.showMessageDialog(null, lista.toString());
                   break; 
